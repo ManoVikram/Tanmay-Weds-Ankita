@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import '../../home_screen/screen/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
+
+  static const String route = "/welcomeScreen";
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +24,11 @@ class WelcomeScreen extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: defaultPadding * 2.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: defaultPadding * 2.0),
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        Navigator.pushNamed(context, HomeScreen.route),
                     style: OutlinedButton.styleFrom(
                       shape: const StadiumBorder(),
                       side: const BorderSide(

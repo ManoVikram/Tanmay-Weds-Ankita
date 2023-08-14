@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import './welcome_screen/screen/welcome_screen.dart';
+import './home_screen/screen/home_screen.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -21,6 +22,10 @@ class _AppState extends State<App> {
         colorScheme: const ColorScheme.light(),
       ),
       initialRoute: "/",
+      routes: {
+        WelcomeScreen.route: (context) => const WelcomeScreen(),
+        HomeScreen.route: (context) => const HomeScreen(),
+      },
       home: const WelcomeScreen(),
     );
   }
