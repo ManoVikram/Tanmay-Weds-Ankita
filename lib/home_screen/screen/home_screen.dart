@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../ceremony_screen/screens/ceremony_screen.dart';
 import '../../constants.dart';
 import '../models/ceremony.dart';
 import '../widgets/function_card.dart';
@@ -44,7 +45,9 @@ class HomeScreen extends StatelessWidget {
               child: FunctionCard(
                 image: ceremonies[index].image,
                 title: ceremonies[index].title,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, CeremonyScreen.route);
+                },
               ),
             ),
           ),
