@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Ceremony {
   const Ceremony({
     required this.name,
@@ -15,10 +17,12 @@ class Ceremony {
 
   factory Ceremony.fromJson(Map<String, dynamic> data) {
     final name = data["name"] as String;
-    final ceremonyDateTime = data["datetime"] as DateTime;
+    final ceremonyDateTime = (data["datetime"] as Timestamp).toDate();
     final location = data["location"] as String;
     final thumbnail = data["thumbnail"] as String;
-    final media = data["media"] as List<String>;
+    final media = (data["media"] as List<dynamic>)
+        .map((media) => media as String)
+        .toList();
 
     return Ceremony(
       name: name,
@@ -29,14 +33,3 @@ class Ceremony {
     );
   }
 }
-
-List<Ceremony> ceremonies = [
-  Ceremony(
-    name: "Engagement",
-    ceremonyDateTime: DateTime.now(),
-    location: "Rajasthan",
-    thumbnail:
-        "https://media.vogue.in/wp-content/uploads/2019/09/Anushka-Sharma-Virat-Kohli-featured-1920x1080.jpg",
-    media: [],
-  ),
-];

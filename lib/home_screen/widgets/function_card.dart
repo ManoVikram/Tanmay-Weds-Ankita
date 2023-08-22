@@ -37,7 +37,7 @@ class FunctionCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Image.asset(
+              child: Image.network(
                 thumbnail,
                 fit: BoxFit.cover,
               ),
