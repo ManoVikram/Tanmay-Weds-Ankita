@@ -43,8 +43,8 @@ class HomeScreen extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: defaultPadding),
               child: FunctionCard(
-                image: ceremonies[index].image,
-                title: ceremonies[index].title,
+                thumbnail: ceremonies[index].thumbnail,
+                name: ceremonies[index].name,
                 onTap: () {
                   Navigator.pushNamed(context, CeremonyScreen.route);
                 },

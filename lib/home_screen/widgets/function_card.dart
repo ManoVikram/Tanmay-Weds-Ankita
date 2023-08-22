@@ -5,13 +5,13 @@ import '../../constants.dart';
 class FunctionCard extends StatelessWidget {
   const FunctionCard({
     super.key,
-    required this.image,
-    required this.title,
+    required this.thumbnail,
+    required this.name,
     required this.onTap,
   });
 
-  final String image;
-  final String title;
+  final String thumbnail;
+  final String name;
   final VoidCallback onTap;
 
   @override
@@ -38,7 +38,7 @@ class FunctionCard extends StatelessWidget {
               ),
               clipBehavior: Clip.antiAlias,
               child: Image.asset(
-                image,
+                thumbnail,
                 fit: BoxFit.cover,
               ),
             ),
@@ -46,7 +46,7 @@ class FunctionCard extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Text(
-                  title,
+                  name,
                   style: const TextStyle(
                     fontSize: 16.0,
                   ),
