@@ -46,7 +46,9 @@ class CeremonyScreen extends StatelessWidget {
               children: [
                 LocationAndTiming(
                   location: ceremonyArgs.location,
-                  timing: "10 AM to 12 PM on Sunday, 25th June",
+                  locationOnMaps: ceremonyArgs.locationOnMaps,
+                  date: ceremonyArgs.date,
+                  time: ceremonyArgs.time,
                 ),
                 const SizedBox(height: defaultPadding * 1.5),
                 GridView.builder(
