@@ -1,5 +1,5 @@
 import '../data_provider/all_ceremonies_api_client.dart';
-import '../models/ceremony.dart';
+import '../../common/models/ceremony.dart';
 
 class AllCeremoniesRepository {
   const AllCeremoniesRepository({

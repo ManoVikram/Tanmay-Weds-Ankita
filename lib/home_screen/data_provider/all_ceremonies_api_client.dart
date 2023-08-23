@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../models/ceremony.dart';
+import '../../common/models/ceremony.dart';
 
 class AllCeremoniesAPIClient {
   const AllCeremoniesAPIClient();
