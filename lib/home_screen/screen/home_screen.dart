@@ -68,7 +68,11 @@ class HomeScreen extends StatelessWidget {
                     thumbnail: allCeremoniesSnapshot.data![index].thumbnail,
                     name: allCeremoniesSnapshot.data![index].name,
                     onTap: () {
-                      Navigator.pushNamed(context, CeremonyScreen.route);
+                      Navigator.pushNamed(
+                        context,
+                        CeremonyScreen.route,
+                        arguments: allCeremoniesSnapshot.data![index],
+                      );
                     },
                   ),
                 ),

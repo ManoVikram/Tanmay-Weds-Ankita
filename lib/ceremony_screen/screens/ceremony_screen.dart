@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../common/models/ceremony.dart';
 import '../../constants.dart';
 import '../widgets/location_and_timing.dart';
 
@@ -11,10 +12,13 @@ class CeremonyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Ceremony ceremonyArgs =
+        ModalRoute.of(context)!.settings.arguments as Ceremony;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Engagement Ceremony",
+          "${ceremonyArgs.name} Ceremony",
           style: TextStyle(
             fontFamily: GoogleFonts.merienda().fontFamily,
             fontWeight: FontWeight.bold,
@@ -40,9 +44,8 @@ class CeremonyScreen extends StatelessWidget {
             padding: const EdgeInsets.all(defaultPadding),
             child: Column(
               children: [
-                const LocationAndTiming(
-                  location:
-                      "Hawa Mahal Rd, Badi Choupad, J.D.A. Market, Pink City, Jaipur, Rajasthan 302002",
+                LocationAndTiming(
+                  location: ceremonyArgs.location,
                   timing: "10 AM to 12 PM on Sunday, 25th June",
                 ),
                 const SizedBox(height: defaultPadding * 1.5),
@@ -55,7 +58,7 @@ class CeremonyScreen extends StatelessWidget {
                     mainAxisSpacing: defaultPadding / 2.0,
                     crossAxisSpacing: defaultPadding / 2.0,
                   ),
-                  itemCount: 18,
+                  itemCount: ceremonyArgs.media.length,
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
@@ -63,8 +66,8 @@ class CeremonyScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       clipBehavior: Clip.antiAlias,
-                      child: Image.asset(
-                        "assets/images/Marriage.png",
+                      child: Image.network(
+                        ceremonyArgs.media[index],
                         fit: BoxFit.cover,
                       ),
                     );

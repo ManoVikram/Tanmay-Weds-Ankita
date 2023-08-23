@@ -19,7 +19,7 @@ class _AppState extends State<App> {
       title: "Tanmay Weds Ankita",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: GoogleFonts.sacramento().fontFamily,
+        fontFamily: GoogleFonts.dancingScript().fontFamily,
         colorScheme: const ColorScheme.light(),
       ),
       initialRoute: "/",
