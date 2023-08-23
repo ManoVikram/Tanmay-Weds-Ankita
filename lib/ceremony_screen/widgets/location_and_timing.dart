@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants.dart';
 
@@ -7,11 +9,21 @@ class LocationAndTiming extends StatelessWidget {
   const LocationAndTiming({
     super.key,
     required this.location,
-    required this.timing,
+    required this.locationOnMaps,
+    required this.date,
+    required this.time,
   });
 
   final String location;
-  final String timing;
+  final String locationOnMaps;
+  final DateTime date;
+  final String time;
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(Uri.parse(locationOnMaps))) {
+      throw Exception('Could not launch $locationOnMaps');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +43,7 @@ class LocationAndTiming extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: GestureDetector(
-              onTap: () {},
+              onTap: () => _launchUrl(),
               child: Text(
                 "View on map",
                 style: TextStyle(
@@ -80,7 +92,7 @@ class LocationAndTiming extends StatelessWidget {
               const SizedBox(width: defaultPadding / 2.0),
               Expanded(
                 child: Text(
-                  timing,
+                  "$time on ${DateFormat('EEEE, d\'th\' MMMM').format(date)}",
                   style: const TextStyle(
                     fontSize: 16.0,
                   ),
