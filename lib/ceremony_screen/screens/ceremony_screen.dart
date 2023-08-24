@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../common/models/ceremony.dart';
 import '../../constants.dart';
+import '../../view_media_screen/screens/view_media_screen.dart';
 import '../widgets/location_and_timing.dart';
 
 class CeremonyScreen extends StatelessWidget {
@@ -64,13 +65,26 @@ class CeremonyScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       clipBehavior: Clip.antiAlias,
-                      child: Image.network(
-                        ceremonyArgs.media[index],
-                        fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ViewMediaScreen(
+                                media: ceremonyArgs.media,
+                                index: index,
+                              ),
+                            ),
+                          );
+                        },
+                        child: Image.network(
+                          ceremonyArgs.media[index],
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   },
