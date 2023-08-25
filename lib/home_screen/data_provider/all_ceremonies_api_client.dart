@@ -36,8 +36,10 @@ class AllCeremoniesAPIClient {
     List<Ceremony> allCeremonies = [];
 
     try {
-      StreamSubscription allCeremoniesStreamSubscription =
-          ceremonyRef.snapshots().listen((QuerySnapshot querySnapshot) {
+      StreamSubscription allCeremoniesStreamSubscription = ceremonyRef
+          .orderBy("date")
+          .snapshots()
+          .listen((QuerySnapshot querySnapshot) {
         allCeremonies = _snapshotToCeremonies(querySnapshot);
 
         streamController.add(allCeremonies);
