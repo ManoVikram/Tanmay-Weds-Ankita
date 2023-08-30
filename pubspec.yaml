@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.2.3
   cloud_firestore: ^4.8.5
   cupertino_icons: ^1.0.2
   firebase_core: ^2.15.1
@@ -39,9 +40,22 @@ dependencies:
   url_launcher: ^6.1.12
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.3.2
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/LauncherLogo.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/LauncherLogo_Foreground.png"
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/SplashLogo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../constants.dart';
 
@@ -37,8 +38,8 @@ class FunctionCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Image.network(
-                thumbnail,
+              child: CachedNetworkImage(
+                imageUrl: thumbnail,
                 fit: BoxFit.cover,
               ),
             ),
