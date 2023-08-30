@@ -28,7 +28,8 @@ class _AppState extends State<App> {
         WelcomeScreen.route: (context) => const WelcomeScreen(),
         HomeScreen.route: (context) => const HomeScreen(),
         CeremonyScreen.route: (context) => const CeremonyScreen(),
-        ViewMediaScreen.route: (context) => const ViewMediaScreen(media: []),
+        ViewMediaScreen.route: (context) =>
+            const ViewMediaScreen(media: [], index: 0),
       },
       home: const WelcomeScreen(),
     );

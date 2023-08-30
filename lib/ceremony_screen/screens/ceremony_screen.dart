@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -81,8 +82,8 @@ class CeremonyScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Image.network(
-                          ceremonyArgs.media[index],
+                        child: CachedNetworkImage(
+                          imageUrl: ceremonyArgs.media[index],
                           fit: BoxFit.cover,
                         ),
                       ),
