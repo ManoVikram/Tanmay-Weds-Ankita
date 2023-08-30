@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/widgets/animated_carousel_scroll_indicator.dart';
@@ -7,11 +8,11 @@ class ViewMediaScreen extends StatefulWidget {
   const ViewMediaScreen({
     super.key,
     required this.media,
-    this.index,
+    required this.index,
   });
 
   final List<String> media;
-  final int? index;
+  final int index;
 
   static const String route = "/viewMediaScreen";
 
@@ -26,7 +27,7 @@ class _ViewMediaScreenState extends State<ViewMediaScreen> {
   void initState() {
     super.initState();
 
-    _carouselController = PageController(initialPage: widget.index ?? 0);
+    _carouselController = PageController(initialPage: widget.index);
   }
 
   @override
@@ -61,8 +62,8 @@ class _ViewMediaScreenState extends State<ViewMediaScreen> {
               itemCount: widget.media.length,
               itemBuilder: (context, index) => GestureDetector(
                 onDoubleTap: () {},
-                child: Image.network(
-                  widget.media[index],
+                child: CachedNetworkImage(
+                  imageUrl: widget.media[index],
                   fit: BoxFit.contain,
                 ),
               ),
@@ -72,7 +73,8 @@ class _ViewMediaScreenState extends State<ViewMediaScreen> {
           AnimatedBuilder(
             animation: _carouselController,
             builder: (context, child) {
-              int carouselImageIndex = _carouselController.page?.round() ?? 0;
+              int carouselImageIndex =
+                  _carouselController.page?.round() ?? widget.index;
 
               return AnimatedCarouselScrollIndicator(
                 length: widget.media.length,
