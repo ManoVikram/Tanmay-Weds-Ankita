@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyATlxs6AD-6d4UR3Q8kE6QciBtZ9ZmoTLw',
-    appId: '1:312632358179:android:ab8fdeb47fbd447e13c896',
+    appId: '1:312632358179:android:cb2c5712554f56b913c896',
     messagingSenderId: '312632358179',
     projectId: 'tanmay-weds-ankita',
     storageBucket: 'tanmay-weds-ankita.appspot.com',
@@ -62,12 +62,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCFdAwqVVqxsJJPO9YUI_DAM7Uh_LY4Xyg',
-    appId: '1:312632358179:ios:94d278955bbfbace13c896',
+    appId: '1:312632358179:ios:9ca112bffa3c29c113c896',
     messagingSenderId: '312632358179',
     projectId: 'tanmay-weds-ankita',
     storageBucket: 'tanmay-weds-ankita.appspot.com',
-    iosClientId: '312632358179-a7e88upisk72hdrq5mgtnqp5qn2t8dbg.apps.googleusercontent.com',
-    iosBundleId: 'com.example.tanmayWedsAnkita',
+    iosClientId: '312632358179-isjr6nu45kcvvk80evpknf83jij3f4q3.apps.googleusercontent.com',
+    iosBundleId: 'com.app.tanmaywedsankita',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(

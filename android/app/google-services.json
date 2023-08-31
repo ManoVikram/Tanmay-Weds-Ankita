@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:312632358179:android:cb2c5712554f56b913c896",
+        "android_client_info": {
+          "package_name": "com.app.tanmaywedsankita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312632358179-e39jhl7ihdncdq3q3ftode5jesk6l983.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATlxs6AD-6d4UR3Q8kE6QciBtZ9ZmoTLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312632358179-e39jhl7ihdncdq3q3ftode5jesk6l983.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "312632358179-a7e88upisk72hdrq5mgtnqp5qn2t8dbg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tanmayWedsAnkita"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:312632358179:android:ab8fdeb47fbd447e13c896",
         "android_client_info": {
           "package_name": "com.example.tanmay_weds_ankita"
