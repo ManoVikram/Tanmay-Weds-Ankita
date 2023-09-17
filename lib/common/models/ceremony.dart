@@ -9,6 +9,7 @@ class Ceremony {
     required this.locationOnMaps,
     required this.thumbnail,
     required this.media,
+    required this.driveLink,
   });
 
   final String name;
@@ -18,6 +19,7 @@ class Ceremony {
   final String locationOnMaps;
   final String thumbnail;
   final List<String> media;
+  final String driveLink;
 
   factory Ceremony.fromJson(Map<String, dynamic> data) {
     final name = data["name"] as String;
@@ -29,6 +31,7 @@ class Ceremony {
     final media = (data["media"] as List<dynamic>)
         .map((media) => media as String)
         .toList();
+    final driveLink = data["driveLink"] as String;
 
     return Ceremony(
       name: name,
@@ -38,6 +41,7 @@ class Ceremony {
       locationOnMaps: locationOnMaps,
       thumbnail: thumbnail,
       media: media,
+      driveLink: driveLink,
     );
   }
 }

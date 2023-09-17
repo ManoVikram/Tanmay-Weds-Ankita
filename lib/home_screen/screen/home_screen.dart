@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-import '../../ceremony_screen/screens/ceremony_screen.dart';
 import '../../constants.dart';
 import '../data_provider/all_ceremonies_api_client.dart';
 import '../repository/all_ceremonies_repository.dart';
@@ -16,6 +16,14 @@ class HomeScreen extends StatelessWidget {
       const AllCeremoniesRepository(
     allCeremoniesAPIClient: AllCeremoniesAPIClient(),
   );
+
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $uri');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,13 +75,15 @@ class HomeScreen extends StatelessWidget {
                   child: FunctionCard(
                     thumbnail: allCeremoniesSnapshot.data![index].thumbnail,
                     name: allCeremoniesSnapshot.data![index].name,
-                    onTap: () {
+                    /* onTap: () {
                       Navigator.pushNamed(
                         context,
                         CeremonyScreen.route,
                         arguments: allCeremoniesSnapshot.data![index],
                       );
-                    },
+                    }, */
+                    onTap: () => _launchUrl(
+                        allCeremoniesSnapshot.data![index].driveLink),
                   ),
                 ),
               );
