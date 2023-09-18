@@ -18,7 +18,21 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             Expanded(
               flex: 4,
-              child: Image.asset("assets/images/Logo.png"),
+              child: Container(
+                margin: const EdgeInsets.all(defaultPadding * 3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[350]!,
+                      offset: const Offset(4.0, 4.0),
+                      blurRadius: 10.0,
+                    ),
+                  ],
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: Image.asset("assets/images/Logo_New.png"),
+              ),
             ),
             Expanded(
               child: Align(
